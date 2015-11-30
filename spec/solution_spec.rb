@@ -2,6 +2,22 @@ require "spec_helper"
 
 describe "solution.rb" do
 
+  describe "#hundred_to_word" do
+    
+    it "returns 300 as three hundred" do
+    
+    end
+    
+    it "returns 750 as seven hundred fifty" do
+    
+    end
+    
+    it "returns 45 as forty five" do
+    
+    end
+    
+  end
+
   describe "#int_to_word" do
   
     it "returns 4527 as four thousand five hundred twenty seven" do
