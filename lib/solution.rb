@@ -1,6 +1,7 @@
 # The hundred_to_word method accepts an integer above 0 and below 1 thousand
 # and returns a string representation of the number in english numerics
 def hundred_to_word(number)
+
   # The numerics hash contains all translations of integer numbers to english
   # numeric string values assuming that they do not require composition
   numerics = {
@@ -53,6 +54,7 @@ end
 # The int_to_word method accepts an integer above 0 and below 1 billion
 # and returns a string representation of the number in english numerics
 def int_to_word(number)
+
   # Dividing the number by a million returns the three digits containing millions
   million = number / 1000000
   
