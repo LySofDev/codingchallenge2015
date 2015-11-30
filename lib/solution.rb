@@ -4,7 +4,7 @@ def hundred_to_word(number)
 
   # The numerics hash contains all translations of integer numbers to english
   # numeric string values assuming that they do not require composition
-  numerics = {
+  numeric = {
     1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six",
     7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten", 11 => "eleven",
     12 => "twelve", 13 => "thirteen", 14 => "fourteen", 15 => "fifteen",
@@ -19,7 +19,7 @@ def hundred_to_word(number)
   
   # Initiate the result string to the numeric translation of the hundred value
   # unless this value is equal to 0. In that case, initiate to an empty string.
-  result = hundred != 0 ? "#{numerics[hundred]} hundred " : ""
+  result = hundred != 0 ? "#{numeric[hundred]} hundred " : ""
   
   # Apply the modulus of 100 operation to the number in order to receive the two
   # digits representing the tens value.
@@ -29,7 +29,7 @@ def hundred_to_word(number)
   # string. If the remaining numbers exists as a key within the numeric hash,
   # then append the translation to the result.
   if numerics.keys.include?(tens)
-    result += "#{numerics[tens]}"
+    result += "#{numeric[tens]}"
     
   # If the value of tens is not present in the numeric.keys then decompose the
   # number until the values are included in the numeric.keys.
@@ -43,7 +43,7 @@ def hundred_to_word(number)
     
     # Append the composite translation of tens and ones to and ommit the tens
     # value if it is equal to 0
-    result += "#{numerics[tens] unless tens == 0} #{numerics[ones]}"
+    result += "#{numeric[tens] unless tens == 0} #{numerics[ones]}"
   end
   
   # Return the result string after calling the #strip method which removes
