@@ -34,10 +34,10 @@ def hundred_to_word(number)
   }
 
   h = number / 100
-  result += "#{numerics[h] unless h == 0} hundred "
+  result += "#{numerics[h]} hundred " unless h == 0
   
   if numerics.keys.include?(number % 100)
-    result += "#{nummerics[h]}"
+    result += "#{numerics[h]}"
   else
     t = (number % 100) / 10
     o = number % 10
