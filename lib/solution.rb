@@ -36,12 +36,12 @@ def hundred_to_word(number)
   h = number / 100
   result += "#{numerics[h]} hundred " unless h == 0
   
-  if numerics.keys.include?(number % 100)
-    result += "#{numerics[number % 100]}"
+  result += if numerics.keys.include?(number % 100)
+    "#{numerics[number % 100]}"
   else
-    t = ((number % 100) / 10) * 10
-    o = number % 10
-    result += "#{numerics[t] unless t == 0} #{numerics[o] unless o == 0}"
+    tens = ((number % 100) / 10) * 10
+    ones = number % 10
+    "#{numerics[tens] unless tens == 0} #{numerics[ones] unless ones == 0}"
   end
   
   result.strip
