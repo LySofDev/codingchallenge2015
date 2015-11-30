@@ -10,10 +10,7 @@ def hundred_to_word(number)
     70 => "seventy", 80 => "eighty", 90 => "ninety"
   }
 
-  result = ""
-  
-  h = number / 100
-  result += "#{numerics[h]} hundred " unless h == 0
+  result = number/100 != 0 ? "#{numerics[number / 100]} hundred " : ""
   
   result += if numerics.keys.include?(number % 100)
     "#{numerics[number % 100]}"
