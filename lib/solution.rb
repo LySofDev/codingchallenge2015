@@ -1,6 +1,8 @@
 # The hundred_to_word method accepts an integer above 0 and below 1 thousand
 # and returns a string representation of the number in english numerics
 def hundred_to_word(number)
+  # The numerics hash contains all translations of integer numbers to english
+  # numeric string values assuming that they do not require composition
   numerics = {
     1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6 => "six",
     7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten", 11 => "eleven",
@@ -10,16 +12,40 @@ def hundred_to_word(number)
     70 => "seventy", 80 => "eighty", 90 => "ninety"
   }
 
-  result = number/100 != 0 ? "#{numerics[number / 100]} hundred " : ""
+  # Divide the number by 100 to receive a single digit representing the
+  # hundreth value.
+  hundred = number / 100
   
-  result += if numerics.keys.include?(number % 100)
-    "#{numerics[number % 100]}"
+  # Initiate the result string to the numeric translation of the hundred value
+  # unless this value is equal to 0. In that case, initiate to an empty string.
+  result = hundred != 0 ? "#{numerics[hundred]} hundred " : ""
+  
+  # Apply the modulus of 100 operation to the number in order to receive the two
+  # digits representing the tens value.
+  tens = number % 100
+  
+  # Append the numeric string value of the remaining two digits to the result
+  # string. If the remaining numbers exists as a key within the numeric hash,
+  # then append the translation to the result.
+  result += if numerics.keys.include?(tens)
+    "#{numerics[tens]}"
+    
+  # If the value of tens is not present in the numeric.keys then decompose the
+  # number until the values are included in the numeric.keys.
   else
-    tens = ((number % 100) / 10) * 10
+    # Remove the trailing digit for the tens digit and append a 0
+    tens = (tens / 10) * 10
+    
+    # Capture the ones digit by applying the modulus of 10 operation to the number
     ones = number % 10
+    
+    # Append the composite translation of tens and ones to and ommit them if 
+    # either value is equal to 0
     "#{numerics[tens] unless tens == 0} #{numerics[ones] unless ones == 0}"
   end
   
+  # Return the result string after calling the #strip method which removes
+  # leading and trailing white spaces
   result.strip
 end
 

@@ -18,7 +18,7 @@ describe "solution.rb" do
     
   end
 
-
+  # Specifications as provided by the projects README.md file
   describe "#int_to_word" do
   
     it "returns 4527 as four thousand five hundred twenty seven" do
