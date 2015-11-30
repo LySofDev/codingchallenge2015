@@ -2,8 +2,7 @@
 # and returns a string representation of the number in english numerics
 def int_to_word(number)
 
-  # Dividing the number by a million returns the three digits containing
-  # millions
+  # Dividing the number by a million returns the three digits containing millions
   million = number / 1000000
   
   # Dividing the number by a thousand returns 6 digits including the thousands
