@@ -13,7 +13,7 @@ def hundred_to_word(number)
     7 => "seven",
     8 => "eight",
     9 => "nine",
-    10 => "ten"
+    10 => "ten",
     11 => "eleven",
     12 => "twelve",
     13 => "thirteen",
