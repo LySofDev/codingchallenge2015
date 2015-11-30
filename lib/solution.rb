@@ -44,7 +44,7 @@ def hundred_to_word(number)
     result += "#{numerics[t] unless t == 0} #{numerics[o] unless o == 0}"
   end
   
-  result
+  result.trim
 end
 
 # The int_to_word method accepts an integer above 0 and below 1 billion
