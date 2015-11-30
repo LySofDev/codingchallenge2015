@@ -1,1 +1,1 @@
-require_relative "../lib/solution"
+require "spec_helper"
