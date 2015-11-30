@@ -27,21 +27,22 @@ def hundred_to_word(number)
   # Append the numeric string value of the remaining two digits to the result
   # string. If the remaining numbers exists as a key within the numeric hash,
   # then append the translation to the result.
-  result += if numerics.keys.include?(tens)
-    "#{numerics[tens]}"
+  if numerics.keys.include?(tens)
+    result += "#{numerics[tens]}"
     
   # If the value of tens is not present in the numeric.keys then decompose the
   # number until the values are included in the numeric.keys.
   else
+  
     # Remove the trailing digit for the tens digit and append a 0
     tens = (tens / 10) * 10
     
     # Capture the ones digit by applying the modulus of 10 operation to the number
     ones = number % 10
     
-    # Append the composite translation of tens and ones to and ommit them if 
-    # either value is equal to 0
-    "#{numerics[tens] unless tens == 0} #{numerics[ones]}"
+    # Append the composite translation of tens and ones to and ommit the tens
+    # value if it is equal to 0
+    result += "#{numerics[tens] unless tens == 0} #{numerics[ones]}"
   end
   
   # Return the result string after calling the #strip method which removes
