@@ -41,7 +41,7 @@ def hundred_to_word(number)
     
     # Append the composite translation of tens and ones to and ommit them if 
     # either value is equal to 0
-    "#{numerics[tens] unless tens == 0} #{numerics[ones] unless ones == 0}"
+    "#{numerics[tens] unless tens == 0} #{numerics[ones]}"
   end
   
   # Return the result string after calling the #strip method which removes
