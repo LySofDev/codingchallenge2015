@@ -1,6 +1,8 @@
 # The hundred_to_word method accepts an integer above 0 and below 1 thousand
 # and returns a string representation of the number in english numerics
 def hundred_to_word(number)
+  result = ""
+  
   numerics = {
     1 => "one",
     2 => "two",
@@ -30,11 +32,19 @@ def hundred_to_word(number)
     80 => "eighty",
     90 => "ninety"
   }
-  
+
   h = number / 100
-  t = (number / 100) % 10
-  o = number % 10
+  result += "#{numerics[h] unless h == 0} hundred "
   
+  if numerics.keys.include?(number % 100)
+    result += "#{nummerics[h]}"
+  else
+    t = (number % 100) / 10
+    o = number % 10
+    result += "#{numerics[t] unless t == 0} #{numerics[o] unless o == 0}"
+  end
+  
+  result
 end
 
 # The int_to_word method accepts an integer above 0 and below 1 billion
