@@ -28,7 +28,7 @@ def hundred_to_word(number)
   # Append the numeric string value of the remaining two digits to the result
   # string. If the remaining numbers exists as a key within the numeric hash,
   # then append the translation to the result.
-  if numerics.keys.include?(tens)
+  if numeric.keys.include?(tens)
     result += "#{numeric[tens]}"
     
   # If the value of tens is not present in the numeric.keys then decompose the
