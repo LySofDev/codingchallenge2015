@@ -1,3 +1,3 @@
-def int_to_word
+def int_to_word(number)
 
 end
