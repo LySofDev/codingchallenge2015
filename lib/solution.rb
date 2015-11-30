@@ -2,7 +2,7 @@
 # and returns a string representation of the number in english numerics
 def int_to_word(number)
 
-  million = umber / 1000000
+  million = number / 1000000
   thousand = (number / 1000) % million
   hundred = number % 1000
   
