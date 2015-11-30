@@ -5,15 +5,15 @@ describe "solution.rb" do
   describe "#hundred_to_word" do
     
     it "returns 300 as three hundred" do
-    
+      expect(hundred_to_word(300)).to eq("three hundred")
     end
     
     it "returns 750 as seven hundred fifty" do
-    
+      expect(hundred_to_word(750)).to eq("seven hundred fifty")
     end
     
     it "returns 45 as forty five" do
-    
+      expect(hundred_to_word(45)).to eq("forty five")
     end
     
   end
